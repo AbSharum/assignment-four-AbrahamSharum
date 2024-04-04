@@ -15,6 +15,9 @@
         <li class="nav-item">
           <a class="nav-link" href="start.php?action=userList">Admin</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="start.php?action=logout">Log Out</a>
+        </li>
       </ul>
     </div>
   </div>

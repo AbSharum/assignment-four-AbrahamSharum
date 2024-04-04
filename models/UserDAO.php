@@ -75,7 +75,7 @@
             $stmt->bind_param("ss",$username,$passwd); 
             $stmt->execute();
             $result = $stmt->get_result();
-            $found=$result->fetch_assoc();
+            $found = $result->fetch_assoc();
             $stmt->close();
             $connection->close();
             return $found;

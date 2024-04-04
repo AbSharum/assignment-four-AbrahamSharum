@@ -10,7 +10,7 @@
         }
 
         public function run(){
-            $action="default";
+            $action="home";
 
             session_start();
 
