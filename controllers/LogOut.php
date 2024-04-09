@@ -14,11 +14,10 @@ class LogOut extends Controller{
         }else{
             if($_POST['submit'] == 'confirm') {
                 $_SESSION['loggedin']=null;
-                echo 'lol';
                 header('Location: start.php?action=home');
                 exit;
             }else{
-                header('Location: start.php?action='.$params['action']'');
+                header('Location: start.php?action=home');
                 exit;
             }
             

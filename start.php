@@ -9,6 +9,7 @@
     include_once "./controllers/UserAdd.php";
     include_once "./controllers/UserUpdate.php";
     include_once "./controllers/UserDelete.php";
+    include_once "./controllers/ArticleList.php";
 
     class MyRouter extends Router{
         public function authCheck($action){
@@ -34,6 +35,7 @@
     $router->addController('userAdd',new UserAdd());
     $router->addController('userUpdate',new UserUpdate());
     $router->addController('userDelete',new UserDelete());
+    $router->addController('articleList',new ArticleList());
 
     $router->run();
 
