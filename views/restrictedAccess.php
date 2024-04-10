@@ -16,6 +16,7 @@
   </style>
 </head>
 <body style="background-color: maroon;">
+<form action="start.php?action=restrictedAccess" method = "POST">
   <div class="container">
     <div class="row">
       <div class="col-md-6 offset-md-3 login-container">
@@ -24,10 +25,12 @@
             <h3 class="card-title text-center">ERROR: YOU DO NOT HAVE ACCESS TO THIS PAGE</h3>
         </div>
             <input style="background-color: black;" type="submit" name="submit" value="Home" class="btn btn-primary">
+            <input style="background-color: black;" type="submit" name="submit" value="Login" class="btn btn-primary">
     </div>
       </div>
     </div>
   </div>
+  </form>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>

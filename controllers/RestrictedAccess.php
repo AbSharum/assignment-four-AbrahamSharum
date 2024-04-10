@@ -2,9 +2,10 @@
 
 class RestrictedAccess extends Controller{
     public function performAction(){
-            if(isset($_POST['submit']) =='Home'){
-            header( "Location: start.php?action=home");
-            exit;
+            if($_POST['submit'] =='Home') {
+                $this->renderView('home',[]);
+            } elseif ($_POST['submit'] =='Login') {
+                $this->renderView('login',[]);
         }
     }
 }
