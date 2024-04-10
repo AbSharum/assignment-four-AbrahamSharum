@@ -12,9 +12,17 @@ class UserDelete extends Controller{
             if($_POST['submit']=='Confirm'){
                 $userID=$_POST['userID'];
                 $userDAO = new UserDAO();
-                $userDAO->deleteUser($userID);
+                $ArticleDAO = new ArticleDAO();
+                $ArticleDAO->deleteArticleUserID($userID);
+                if($_SESSION['loggedin']['userID'] == $userID) {
+                    $userDAO->deleteUser($userID);
+                    $_SESSION['loggedin'] = null;
+                    header( "Location: start.php?action=home");
+                } else {
+                    $userDAO->deleteUser($userID);
+                    header( "Location: start.php?action=userList");
+                }
             }
-            header( "Location: start.php?action=userList");
             exit;
         }
     }

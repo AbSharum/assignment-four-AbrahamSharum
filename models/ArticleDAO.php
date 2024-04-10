@@ -12,10 +12,10 @@
             return $mysqli;
         }
 
-        public function addArticle($article,$user) {
+        public function addArticle($article) {
             $connection = $this->getConnection();
-            $stmt = $connection->prepare("INSERT into articles (title,imagePath,content,userID);");
-            $stmt->bind_param("sssi",$article->getTitle(),$article->getImgPath(),$article->getContent(),$user->getUserID());
+            $stmt = $connection->prepare("INSERT INTO articles (title,imagePath,content,userID) VALUES (?,?,?,?)");
+            $stmt->bind_param("sssi",$article->getTitle(),$article->getImgPath(),$article->getContent(),$article->getUserID());
             $stmt->execute();
             $stmt->close();
             $connection->close();
@@ -23,17 +23,26 @@
 
         public function updateArticle($article) {
             $connection = $this->getConnection();
-            $stmt = $connection->prepare("UPDATE set title = ?, imagePath = ?, content=? where userID =?;");
-            $stmt->bind_param("sssi",$article->getTitle(),$article->getImgPath(),$article->getContent(),$article->getUserID());
+            $stmt = $connection->prepare("UPDATE articles SET title = ?, imagePath = ?, content = ? where articleID =?;");
+            $stmt->bind_param("sssi",$article->getTitle(),$article->getImgPath(),$article->getContent(),$article->getArticleID());
             $stmt->execute();
             $stmt->close();
             $connection->close();
         }
 
-        public function deleteArticle($article) {
+        public function deleteArticle($articleID) {
             $connection = $this->getConnection();
-            $stmt = $connection->prepare("UPDATE FROM articles where userID =?;");
-            $stmt->bind_param("i",$article->getUserID());
+            $stmt = $connection->prepare("DELETE FROM articles where articleID =?;");
+            $stmt->bind_param("i",$articleID);
+            $stmt->execute();
+            $stmt->close();
+            $connection->close();
+        }
+
+        public function deleteArticleUserID($userID) {
+            $connection = $this->getConnection();
+            $stmt = $connection->prepare("DELETE FROM articles where userID =?;");
+            $stmt->bind_param("i",$userID);
             $stmt->execute();
             $stmt->close();
             $connection->close();
@@ -54,19 +63,19 @@
             return $articles;
         }
 
-        public function getArticle($userid){
+        public function getArticle($articleID){
             $connection=$this->getConnection();
-            $stmt = $connection->prepare("SELECT * FROM users WHERE userID = ?;"); 
-            $stmt->bind_param("i", $userid);
+            $stmt = $connection->prepare("SELECT * FROM articles WHERE articleID = ?;"); 
+            $stmt->bind_param("i", $articleID);
             $stmt->execute();
             $result = $stmt->get_result();
             if($row = $result->fetch_assoc()){
-                $user = new User();
-                $user->load($row);
+                $article = new Article();
+                $article->load($row);
             }    
             $stmt->close();
             $connection->close();
-            return $user;
+            return $article;
         }
 
 

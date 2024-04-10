@@ -3,6 +3,7 @@
 
     class Router{
         public $controllers;
+        private $userID;
 
         public function __construct(){
             $this->showErrors(0);

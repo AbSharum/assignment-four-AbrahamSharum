@@ -7,12 +7,15 @@ class LogOut extends Controller{
 
     public function performAction(){
         if($_SERVER['REQUEST_METHOD']=='GET'){
-            $page = $_SERVER['REQUEST_URI'];
-            $name = parse_url($page);
-            parse_str($name['query'], $params);
-            $this->renderView("logout",[]);
+            if($_SESSION['loggedin'] != null) {
+                $userDAO = new UserDAO();
+                $user = $userDAO->getUser($_SESSION['loggedin']['userID']);
+                $this->renderView("logout",$user);
+            } else {
+                $this->renderView("logout",[]);
+            }
         }else{
-            if($_POST['submit'] == 'confirm') {
+            if($_POST['submit'] == 'Confirm') {
                 $_SESSION['loggedin']=null;
                 header('Location: start.php?action=home');
                 exit;

@@ -4,8 +4,10 @@ class Article implements JsonSerializable {
     private $imgPath;
     private $content;
     private $userID;
+    private $articleID;
 
     public function load($row){
+        $this->setArticleID($row['articleID']);
         $this->setTitle($row['title']);
         $this->setImgPath($row["imagePath"]);
         $this->setContent($row["content"]);
@@ -46,6 +48,15 @@ class Article implements JsonSerializable {
         return $this->userID;
     }
 
+    public function setArticleID($articleID) {
+        $this->articleID = $articleID;
+    }
+
+    public function getArticleID() {
+        return $this->articleID;
+    }
+
+
 
     
 
@@ -55,6 +66,7 @@ class Article implements JsonSerializable {
             'imgagePath' => $this->imgPath,
             'content' => $this->content,
             'userID' => $this->userID,
+            'articleID' => $this->articleID
         );
     }
 }

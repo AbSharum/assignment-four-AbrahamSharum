@@ -81,6 +81,16 @@
             return $found;
         }
 
+        public function getUserID($username, $passwd){
+            $connection=$this->getConnection();
+            $stmt = $connection->prepare("SELECT userID FROM users WHERE username = ? and passwd = ?;");
+            $stmt->bind_param("ss",$username,$passwd);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $name = $result->fetch_assoc();
+            return $name;
+        }
+
 
 
     }

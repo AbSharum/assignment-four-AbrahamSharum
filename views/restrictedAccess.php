@@ -15,29 +15,16 @@
     }
   </style>
 </head>
-<body style="background-color: whitesmoke;">
+<body style="background-color: maroon;">
   <div class="container">
     <div class="row">
       <div class="col-md-6 offset-md-3 login-container">
         <div class="card">
           <div class="card-body">
-            <h3 class="card-title text-center">Login</h3>
-            <form action="start.php?action=login" method="POST">
-                <div class="form-group mb-2">
-                    <label for="username">Username</label>
-                    <input type="text" class="form-control" id="username" name="username" placeholder="Username">
-                </div>
-                <div class="form-group mb-2">
-                    <label for="passwd">Password</label>
-                    <input type="password" class="form-control" id="passwd" name="passwd" placeholder="Password">
-                </div>
-                <div class="form-group mb-2">
-                    <button type="submit" name="submit" class="btn btn-primary">Login</button>
-                    <input type="submit" name="submit" value="Cancel" class="btn btn-primary">
-                </div>
-            </form>
-          </div>
+            <h3 class="card-title text-center">ERROR: YOU DO NOT HAVE ACCESS TO THIS PAGE</h3>
         </div>
+            <input style="background-color: black;" type="submit" name="submit" value="Home" class="btn btn-primary">
+    </div>
       </div>
     </div>
   </div>

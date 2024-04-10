@@ -9,7 +9,11 @@
     include_once "./controllers/UserAdd.php";
     include_once "./controllers/UserUpdate.php";
     include_once "./controllers/UserDelete.php";
+    include_once "./controllers/ArticleAdd.php";
+    include_once "./controllers/ArticleUpdate.php";
+    include_once "./controllers/ArticleDelete.php";
     include_once "./controllers/ArticleList.php";
+    include_once "./controllers/RestrictedAccess.php";
 
     class MyRouter extends Router{
         public function authCheck($action){
@@ -17,13 +21,12 @@
             $access = $controller->getAuth();
             if($access!="PUBLIC"){
                 if(!isset($_SESSION['loggedin'])){
-                    header("Location: start.php?action=login");
+                    $controller->renderView('restrictedAccess',[]);
                     exit;
                 }
             }
         }
     }
-
     $router = new MyRouter();
     $router->showErrors(1);
 
@@ -35,7 +38,11 @@
     $router->addController('userAdd',new UserAdd());
     $router->addController('userUpdate',new UserUpdate());
     $router->addController('userDelete',new UserDelete());
+    $router->addController('articleAdd',new ArticleAdd());
+    $router->addController('articleUpdate',new ArticleUpdate());
+    $router->addController('articleDelete', new ArticleDelete());
     $router->addController('articleList',new ArticleList());
+    $router->addController('restrictedAccess',new RestrictedAccess());
 
     $router->run();
 

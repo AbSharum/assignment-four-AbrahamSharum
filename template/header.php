@@ -16,7 +16,13 @@
           <a class="nav-link" href="start.php?action=userList">Admin</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="start.php?action=logout">Log Out</a>
+          <a class="nav-link" href="start.php?action=login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="start.php?action=logout">Logout</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="start.php?action=articleList">Articles</a>
         </li>
       </ul>
     </div>

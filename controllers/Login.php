@@ -9,10 +9,15 @@ class Login extends Controller{
         if($_SERVER['REQUEST_METHOD']=='GET'){
             $this->renderView("login",[]);
         }else{
+            if($_POST['submit'] == 'Cancel') {
+                header('Location: start.php?action=home');
+                exit;
+            }
             if(isset($_POST['username']) && isset($_POST['passwd'])){
                 $username = $_POST['username'];
                 $passwd = $_POST['passwd'];
                 $userDAO = new UserDAO();
+                $userID = $userDAO->getUserID($username,$passwd);
                 $result=$userDAO->authenticate($username,$passwd);
                 if($result==NULL){
                     //** Unsuccessful */
@@ -20,7 +25,7 @@ class Login extends Controller{
                     exit;
                 }else{
                     //** Successful */
-                    $_SESSION['loggedin']=$result;
+                    $_SESSION['loggedin']= $result;
                     header('Location: start.php?action=home');
                     exit;
                 }

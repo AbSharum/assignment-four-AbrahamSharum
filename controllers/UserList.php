@@ -7,7 +7,11 @@ class UserList extends Controller{
         $userDAO = new UserDAO();
 
         $users=$userDAO->getUsers();
-        $this->renderView("userList",$users);
+        if($_SESSION['loggedin']['urole'] == 'admin' and $_SESSION['loggedin'] != null) {
+            $this->renderView("userList",$users);
+        } else {
+            $this->renderView("restrictedAccess",[]);
+        }
     }
 
     public function getAuth(){
