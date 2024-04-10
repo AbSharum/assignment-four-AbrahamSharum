@@ -20,12 +20,12 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 offset-md-3 login-container">
-        <div class="card">
+        <div class="card text-white bg-secondary mb-3">
           <div class="card-body">
             <h3 class="card-title text-center">ERROR: YOU DO NOT HAVE ACCESS TO THIS PAGE</h3>
         </div>
-            <input style="background-color: black;" type="submit" name="submit" value="Home" class="btn btn-primary">
-            <input style="background-color: black;" type="submit" name="submit" value="Login" class="btn btn-primary">
+            <input style="color: white;" type="submit" name="submit" value="Home" class="btn btn-dark">
+            <input style="color: white;" type="submit" name="submit" value="Login" class="btn btn-dark">
     </div>
       </div>
     </div>

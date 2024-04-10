@@ -10,12 +10,12 @@
       <input type="text" class="form-control" id="username" name="username" required>
     </div>
     <div class="form-group p-2">
-      <label for="lastname">Last Name:</label>
-      <input type="text" class="form-control" id="lastname" name="lastname">
-    </div>
-    <div class="form-group p-2">
       <label for="firstname">First Name:</label>
       <input type="text" class="form-control" id="firstname" name="firstname">
+    </div>
+    <div class="form-group p-2">
+      <label for="lastname">Last Name:</label>
+      <input type="text" class="form-control" id="lastname" name="lastname">
     </div>
     <div class="form-group p-2">
       <label for="passwd">Password:</label>
