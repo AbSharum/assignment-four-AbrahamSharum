@@ -22,7 +22,10 @@
           <a class="nav-link" href="start.php?action=logout">Logout</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="start.php?action=articleList">Articles</a>
+          <a class="nav-link" href="start.php?action=articleList">Article List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="start.php?action=articleDisplay">Article Display</a>
         </li>
       </ul>
     </div>

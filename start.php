@@ -13,6 +13,7 @@
     include_once "./controllers/ArticleUpdate.php";
     include_once "./controllers/ArticleDelete.php";
     include_once "./controllers/ArticleList.php";
+    include_once "./controllers/ArticleDisplay.php";
     include_once "./controllers/RestrictedAccess.php";
 
     class MyRouter extends Router{
@@ -43,6 +44,7 @@
     $router->addController('articleDelete', new ArticleDelete());
     $router->addController('articleList',new ArticleList());
     $router->addController('restrictedAccess',new RestrictedAccess());
+    $router->addController('articleDisplay',new ArticleDisplay());
 
     $router->run();
 
