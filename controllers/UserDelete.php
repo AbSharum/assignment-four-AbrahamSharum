@@ -22,6 +22,8 @@ class UserDelete extends Controller{
                     $userDAO->deleteUser($userID);
                     header( "Location: start.php?action=userList");
                 }
+            } else {
+                header( "Location: start.php?action=userList");
             }
             exit;
         }

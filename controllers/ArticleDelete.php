@@ -8,7 +8,7 @@ class ArticleDelete extends Controller{
                 $articleID = $_GET['articleID'];
                 $articleDAO = new ArticleDAO();
                 $article = $articleDAO->getArticle($articleID);
-                if($article->getUserId() == $_SESSION['loggedin']['userID']) {
+                if($article->getUserId() == $_SESSION['loggedin']['userID'] or $_SESSION['loggedin']['urole'] == 'admin') {
                     $this->renderView("articleDelete",$article);
                 } else {
                     $this->renderView("restrictedAccess",[]);

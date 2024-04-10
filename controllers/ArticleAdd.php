@@ -6,7 +6,7 @@ class ArticleAdd extends Controller{
     private $article;
 
     public function performAction(){
-        if($_SESSION['loggedin']['urole'] == 'author' and $_SESSION['loggedin'] != null) {
+        if(($_SESSION['loggedin']['urole'] == 'author' or $_SESSION['loggedin']['urole'] == 'admin') and $_SESSION['loggedin'] != null) {
             if($_SERVER['REQUEST_METHOD']=='GET'){
                 $this->renderView("articleAdd",[]);
             }else{

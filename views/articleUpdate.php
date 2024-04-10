@@ -14,7 +14,7 @@
       <input type="text" class="form-control" id="imgPath" name="imgPath" value="<?php echo $data->getImgPath(); ?>">
     </div>
     <div class="form-group p-2">
-      <label for="firstname">Content:</label>
+      <label for="firstname">Content (Limit: 126 Characters)</label>
       <input type="text" class="form-control" id="content" name="content" value="<?php echo $data->getContent(); ?>">
     </div>
     <div class="form-group p-2">

@@ -32,7 +32,7 @@ grant all privileges on assign4DB.* to 'assign4user'@'localhost';
 insert into users(username,lastname,firstname,passwd,email,urole) values 
    ('admin','Admin','Admin','admin123','admin@mail.com','admin'),
     ('jsmith','Smith','Joe','buddy','jsmith@gmail.com','admin'),
-   ('bwilliams','Williams','Brian','pass123','bwilliams@gmail.com','user'),
+   ('bwilliams','Williams','Brian','pass123','bwilliams@gmail.com','author'),
    ('mjones','Jones','Mike','pass1234','mjones@gmail.com','user'),
    ('mjohnson','Johnson','Monica','password','mjohnson@gmail.com','user'),
    ('user1', 'Doe', 'John', 'password1', 'user1@example.com', 'user'),

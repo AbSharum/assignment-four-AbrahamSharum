@@ -14,7 +14,7 @@
       <input type="text" class="form-control" id="imgPath" name="imgPath">
     </div>
     <div class="form-group p-2">
-      <label for="firstname">Content:</label>
+      <label for="firstname">Content (Limit: 126 Characters):</label>
       <input type="text" class="form-control" id="content" name="content">
     </div>
     <div class="form-group p-2">
