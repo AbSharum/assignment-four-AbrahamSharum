@@ -1,5 +1,5 @@
 <div class=content>
-<body style="background-color: wheat;">
+<body style>
     <div style="text-wrap: wrap;">
         <?php
             echo "<ul id=z>";
@@ -7,7 +7,7 @@
                 $userDAO = new UserDAO();
                 $user = $userDAO->getUser($data[$index]->getUserID());
                 echo "<li id=name  ><strong>".$data[$index]->getTitle()."<br></strong>";
-                echo "<div class=pic><img style= width= 50px height = 350px; src=".$data[$index]->getImgPath()."></div><br>";
+                echo "<div class=pic><img style= width= 50px height = 350px; src=".$data[$index]->getImgPath()." onerror=\"this.src='images/background.jpg';\"></div><br>";
                 echo "<p id=text><i>".$data[$index]->getContent()."</i></p><br><br>";
                 echo "<strong>Made by: </strong> ".$user->getFirstName()." ".$user->getLastName()."<br>";
                 echo "<strong>Email: </strong> ".$user->getEmail()."<br><br><li>";

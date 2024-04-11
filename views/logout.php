@@ -16,7 +16,7 @@
   </style>
 </head>
 
-<div class="container text-bg-light m-3">
+<div class="container text-bg-dark m-3">
     <?php if($_SESSION['loggedin'] == null) {
         $username = "Empty";
         $firstname = "Empty";
@@ -39,8 +39,8 @@
 
   <form action="start.php?action=logout" method="POST">
     <div class="form-group p-2">
-        <input type="submit" name="submit" value="Confirm" class="btn btn-primary">
-        <input type="submit" name="submit" value="Cancel" class="btn btn-primary">
+        <input type="submit" name="submit" value="Confirm" class="btn btn-dark">
+        <input type="submit" name="submit" value="Cancel" class="btn btn-dark">
     </div>
   </form>
 </div>

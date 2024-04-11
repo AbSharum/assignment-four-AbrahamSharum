@@ -15,13 +15,13 @@
     }
   </style>
 </head>
-<body style="background-color: whitesmoke;">
+<body style="background-color: lightgray;">
   <div class="container">
     <div class="row">
       <div class="col-md-6 offset-md-3 login-container">
-        <div class="card">
+        <div class="card bg-dark">
           <div class="card-body">
-            <h3 class="card-title text-center">Login</h3>
+            <h3 class="card-title text-center text-light">Login</h3>
             <form action="start.php?action=login" method="POST">
                 <div class="form-group mb-2">
                     <label for="username">Username</label>
@@ -32,8 +32,8 @@
                     <input type="password" class="form-control" id="passwd" name="passwd" placeholder="Password">
                 </div>
                 <div class="form-group mb-2">
-                    <button type="submit" name="submit" class="btn btn-primary">Login</button>
-                    <input type="submit" name="submit" value="Cancel" class="btn btn-primary">
+                    <button type="submit" name="submit" class="btn btn-dark">Login</button>
+                    <input type="submit" name="submit" value="Cancel" class="btn btn-dark">
                 </div>
             </form>
           </div>

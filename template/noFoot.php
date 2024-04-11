@@ -9,7 +9,6 @@
   <body style="background-color: lightgray;">
     <div class=flex-wrapper>
     <?php
-        include "./template/header.php";
         include "./views/$view.php";
         include "./template/footer.php";
     ?>

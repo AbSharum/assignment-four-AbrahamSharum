@@ -95,3 +95,7 @@
     </tbody>
   </table>
 </div>
+<?php
+  include_once "articleDisplay.php";
+?>
+
