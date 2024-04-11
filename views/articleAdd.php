@@ -7,7 +7,7 @@
     <form action="start.php?action=articleAdd" method="POST">
     <div class="form-group p-2">
       <label for="username">Title:</label>
-      <input type="text" class="form-control" id="title" name="title" required>
+      <input type="text" class="form-control" id="title" name="title">
     </div>
     <div class="form-group p-2">
       <label for="lastname">Image Path (Example: myImage.jpg):</label>

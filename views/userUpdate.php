@@ -1,5 +1,5 @@
 
-<div class="container text-bg-light m-3">
+<div class="container text-bg-dark m-3">
     <h3>Update User Form</h3>
     <p class="lead">Use the following form to modify information for an existing user in the database.</p>
 
@@ -30,8 +30,8 @@
       <input type="text" class="form-control" id="urole" name="urole" value="<?php echo $data->getUrole(); ?>">
     </div>
     <div class="form-group p-2">
-        <button type="submit" name="submit" value="Confirm" class="btn btn-primary">Save Changes</button>
-        <button type="submit" name="submit" value="Cancel" class="btn btn-primary">Cancel</button>
+        <button type="submit" name="submit" value="Confirm" class="btn btn-dark">Save Changes</button>
+        <button type="submit" name="submit" value="Cancel" class="btn btn-dark">Cancel</button>
     </div>
   </form>
 </div>
