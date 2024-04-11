@@ -27,6 +27,9 @@
         <li class="nav-item">
           <a class="nav-link" href="start.php?action=articleDisplay">Article Display</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="start.php?action=articleAdd">Add an Article</a>
+        </li>
       </ul>
     </div>
   </div>

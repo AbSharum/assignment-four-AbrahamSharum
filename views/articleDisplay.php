@@ -19,7 +19,7 @@
         #z{
             list-style-type: none;
         }
-        #name {
+        #name{
             display: inline;
             float: left;
             padding-left: 200px;
@@ -29,7 +29,7 @@
         .pic{
             padding-right: 400px;
         }
-        #text {
+        #text{
             word-wrap: break-word;
             width: 300px;
         }

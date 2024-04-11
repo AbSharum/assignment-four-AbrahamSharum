@@ -29,7 +29,7 @@
         }
     }
     $router = new MyRouter();
-    $router->showErrors(1);
+    $router->showErrors(0);
 
     $router->addController('home',new Home());
     $router->addController('about',new About());
