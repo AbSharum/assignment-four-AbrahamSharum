@@ -3,7 +3,9 @@
     
     <h3>Delete Article Form</h3>
     <p class="lead">Select to confirm the removal of an existing article from the database.</p>
-    <h5><?php echo $data->getArticleID()." ".$data->getTitle()?></h5>
+    <h5><?php 
+    $_SESSION['currentPage'] = $_GET['action'];
+    echo $data->getArticleID()." ".$data->getTitle()?></h5>
 
   <form action="start.php?action=articleDelete" method="POST">
     <div class="form-group p-2">

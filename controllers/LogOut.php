@@ -20,7 +20,7 @@ class LogOut extends Controller{
                 header('Location: start.php?action=home');
                 exit;
             }else{
-                header('Location: start.php?action=home');
+                header('Location: start.php?action='.$_SESSION['currentPage']);
                 exit;
             }
             

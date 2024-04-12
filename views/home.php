@@ -1,5 +1,5 @@
 <div class="container">
-   
+  <?php $_SESSION['currentPage'] = $_GET['action'];?>
     <p class="lead">
     A <b>Model-View-Controller (MVC)</b> web application is a design pattern commonly used in web development to structure applications into three interconnected components: the Model, the View, and the Controller. Each component has its own distinct responsibilities, which helps in maintaining a clean separation of concerns and makes the codebase easier to manage and extend.
     </p>

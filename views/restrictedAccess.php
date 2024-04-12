@@ -26,6 +26,7 @@
         </div>
             <input style="color: white;" type="submit" name="submit" value="Home" class="btn btn-dark">
             <input style="color: white;" type="submit" name="submit" value="Login" class="btn btn-dark">
+            <input style="color: white;" type="submit" name="submit" value="Back" class="btn btn-dark">
     </div>
       </div>
     </div>

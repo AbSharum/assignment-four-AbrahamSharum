@@ -7,7 +7,7 @@
     <form action="start.php?action=userAdd" method="POST">
     <div class="form-group p-2">
       <label for="username">Username:</label>
-      <input type="text" class="form-control" id="username" name="username" required>
+      <input type="text" class="form-control" id="username" name="username">
     </div>
     <div class="form-group p-2">
       <label for="firstname">First Name:</label>
@@ -19,11 +19,11 @@
     </div>
     <div class="form-group p-2">
       <label for="passwd">Password:</label>
-      <input type="text" class="form-control" id="passwd" name="passwd" required>
+      <input type="text" class="form-control" id="passwd" name="passwd">
     </div>
     <div class="form-group p-2">
       <label for="email">Email:</label>
-      <input type="email" class="form-control" id="email" name="email" required>
+      <input type="email" class="form-control" id="email" name="email">
     </div>
     <div class="form-group p-2">
       <label for="urole">Role:</label>

@@ -9,7 +9,7 @@
                 <th>Email</th><th>Role</th></tr></thead>
                 <tbody>
                     <?php
-
+                        $_SESSION['currentPage'] = $_GET['action'];
                         for($index=0;$index<count($data);$index++){
                             echo "<tr><td class=\"text-center\"><input type=\"radio\" name=\"userID\" value=\"".$data[$index]->getUserID()."\" required></td>";
                             echo "<td>".$data[$index]->getLastname()."</td>";

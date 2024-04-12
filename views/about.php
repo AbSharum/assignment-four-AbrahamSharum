@@ -32,6 +32,7 @@
     <h6 class="card-subtitle mb-2 text-body-secondary">Controller.php</h6>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     <?php
+    $_SESSION['currentPage'] = $_GET['action'];
     $homepage = file_get_contents('./framework/Controller.php');
     highlight_string($homepage);
     ?>   

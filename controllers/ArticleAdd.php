@@ -20,7 +20,7 @@ class ArticleAdd extends Controller{
                     $articleDAO->addArticle($article);
                 }
                 //** Next View */
-                header( "Location: start.php?action=articleList");
+                header( "Location: start.php?action=".$_SESSION['currentPage']);
                 exit;
             }
         } else {

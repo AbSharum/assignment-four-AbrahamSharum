@@ -10,7 +10,7 @@ class Login extends Controller{
             $this->renderView("login",[]);
         }else{
             if($_POST['submit'] == 'Cancel') {
-                header('Location: start.php?action=home');
+                header('Location: start.php?action='.$_SESSION['currentPage']);
                 exit;
             }
             if(isset($_POST['username']) && isset($_POST['passwd'])){

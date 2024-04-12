@@ -21,7 +21,7 @@ class UserAdd extends Controller{
                 $userDAO->addUser($user);
             }
             //** Next View */
-            header( "Location: start.php?action=userList");
+            header( "Location: start.php?action=".$_SESSION['currentPage']);
             exit;
         }
     }
