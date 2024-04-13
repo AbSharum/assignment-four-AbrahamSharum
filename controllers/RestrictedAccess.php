@@ -9,6 +9,9 @@ class RestrictedAccess extends Controller{
                 header( "Location: start.php?action=login");
                 exit;
             } elseif ($_POST['submit'] =='Back') {
+                if ($_SESSION['currentPage'] == null) {
+                    $_SESSION['currentPage'] = 'home';
+                }
                 header( "Location: start.php?action=".$_SESSION['currentPage']);
                 exit;
         }
