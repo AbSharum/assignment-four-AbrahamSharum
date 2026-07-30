@@ -42,3 +42,37 @@ Ensure your works properly by accessing your site using accoutns with all of the
 | Security            | - Security scheme is not modified or lacks implementation. | - Security scheme is modified but lacks proper role-based access control. | - Security scheme successfully implements role-based access control for user, admin, and author roles. | - Security scheme is robust, comprehensive, and effectively restricts access based on roles. |
 |                     | - Authentication for adding new articles is not implemented or incomplete. | - Authentication for adding new articles is implemented but lacks proper validation or error handling. | - Authentication for adding new articles is implemented with proper validation and error handling. | - Authentication for adding new articles is seamless, secure, and transparent to users. |
 |                     | - Authorization for adding new articles is not implemented or incomplete. | - Authorization for adding new articles is implemented but lacks proper role-based restrictions. | - Authorization for adding new articles is implemented with proper role-based restrictions. | - Authorization for adding new articles is granular, customizable, and enforces strict access control. |
+
+---
+
+## Implementation Notes
+
+A hand-rolled **PHP MVC framework** (no external framework/library — everything under `framework/` is custom) implementing an article-publishing / user-management app with role-based access control, backed by MySQL via `mysqli`.
+
+**Architecture:**
+- `start.php` is the single entry point. It registers every controller with a custom `Router` (`framework/Router.php`, extended as `MyRouter`) and dispatches based on the `?action=` query/POST parameter (e.g. `start.php?action=home`, `start.php?action=login`).
+- `MyRouter::authCheck()` checks each controller's `getAuth()` (`PUBLIC` by default, overridden per controller) against `$_SESSION['loggedin']`; unauthenticated access to a non-public action renders `restrictedAccess` instead.
+- **Controllers** (`controllers/`) — one per action: `Home`, `About`, `Login`/`LogOut`, `UserList`/`UserAdd`/`UserUpdate`/`UserDelete`, `ArticleList`/`ArticleDisplay`/`ArticleAdd`/`ArticleUpdate`/`ArticleDelete`, `RestrictedAccess`.
+- **Models/DAOs** (`models/`) — `Article`/`ArticleDAO` and `User`/`UserDAO`. The DAOs run parameterized SQL (`mysqli` prepared statements) implementing full CRUD for both articles and users.
+- **Views** (`views/`) and shared **templates** (`template/header.php`, `footer.php`, `template.php`) render the pages.
+
+**Auth/roles:** users have a `urole` of `user`, `admin`, or `author` (see `assign4.sql`). Logging in (`controllers/Login.php`) authenticates against the `users` table and stores the user record in `$_SESSION['loggedin']`. Adding an article (`controllers/ArticleAdd.php`) is restricted to `author`/`admin` roles; the Users admin views are intended to be restricted to `admin` (see each controller's `getAuth()`).
+
+**Database:** `assign4.sql` drops/recreates the `assign4DB` database and the `assign4user` MySQL account (password `mvcpass`), creates `users` and `articles` tables (articles have a `userID` foreign key to users), and seeds ~25 users (various roles, plain-text passwords) and 10 sample articles. All DAOs connect with hardcoded credentials: host `127.0.0.1`, user `assign4user`, password `mvcpass`, database `assign4DB` (see `getConnection()` in `models/ArticleDAO.php` / `models/UserDAO.php`) — there is no separate config file, so to point it at a different DB you edit those two files directly.
+
+### Setup & Run
+
+1. **Create the database** (needs a local MySQL/MariaDB server; `sudo mysql` or any client with privileges to create databases/users):
+   ```
+   sudo mysql < assign4.sql
+   ```
+2. **Run the app** with PHP's built-in server (requires the `mysqli` extension) from the project root:
+   ```
+   php -S localhost:8000
+   ```
+   Then open `http://localhost:8000/start.php`.
+
+   (Works equally well behind Apache/`php-fpm` pointed at this directory, as long as `mysqli` is enabled.)
+
+3. **Sample logins** (from the seed data in `assign4.sql`): `admin` / `admin123` (admin), `bwilliams` / `pass123` (author), `mjones` / `pass1234` (user).
+
